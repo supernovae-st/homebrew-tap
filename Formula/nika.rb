@@ -2,28 +2,28 @@
 class Nika < Formula
   desc "Semantic YAML workflow engine for AI"
   homepage "https://github.com/supernovae-st/nika"
-  version "0.17.5"
+  version "0.19.1"
   license "AGPL-3.0-or-later"
 
   on_macos do
     on_arm do
-      url "https://github.com/supernovae-st/nika/releases/download/v0.17.5/nika-macos-arm64-0.17.5.tar.gz"
-      sha256 "99bc3ebad81c853e8f28797c0930aed17ec915669db6a7ba71983eabf80bb687"
+      url "https://github.com/supernovae-st/nika/releases/download/v0.19.1/nika-macos-arm64-0.19.1.tar.gz"
+      sha256 "78473894c533f3419e940fa17cdbb50c109e0f51006e987e11c084ec908c01d6"
     end
     on_intel do
-      url "https://github.com/supernovae-st/nika/releases/download/v0.17.5/nika-macos-x64-0.17.5.tar.gz"
-      sha256 "85580d73b43b7425ab99e8481a614accba6e61600145afa4c85269a25912cec1"
+      url "https://github.com/supernovae-st/nika/releases/download/v0.19.1/nika-macos-x64-0.19.1.tar.gz"
+      sha256 "d4691042c9ff333880a5dfac3500309bca14fefb7bd187cc98f7f92931ac3ef1"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/supernovae-st/nika/releases/download/v0.17.5/nika-linux-arm64-0.17.5.tar.gz"
-      sha256 "e6ed03c4413d561963ebc4a975383b450f28ec1d331fe7c37e05bf384439f255"
+      url "https://github.com/supernovae-st/nika/releases/download/v0.19.1/nika-linux-arm64-0.19.1.tar.gz"
+      sha256 "63f544da746523c182002ec76299034215d04a8fe769ca81ef81bbfe5588f2fd"
     end
     on_intel do
-      url "https://github.com/supernovae-st/nika/releases/download/v0.17.5/nika-linux-x64-0.17.5.tar.gz"
-      sha256 "9c97a8a6cb7d620b33e8c2a0abaaba4c3e414fc949fdd8fca58efe02adee21be"
+      url "https://github.com/supernovae-st/nika/releases/download/v0.19.1/nika-linux-x64-0.19.1.tar.gz"
+      sha256 "2ef776ce34f573bd93d0a1939e138049679503c81189c59abec2999cb45f6333"
     end
   end
 
