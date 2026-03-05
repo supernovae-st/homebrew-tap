@@ -9,7 +9,7 @@ class Novanet < Formula
   on_macos do
     on_arm do
       url "https://github.com/supernovae-st/novanet/releases/download/v0.16.2/novanet-macos-arm64-0.16.2.tar.gz"
-      sha256 "e9ba9578f75dec75cf4454bc53d2009b078b4f536e1627fd2042ff7231f6fced"
+      sha256 "28a3da1e7163f083d059472c7f4fc2150b7f626b8cb004c15f1c056fd9a67b06"
     end
     on_intel do
       # TODO: Add x64 binary when CI releases are set up

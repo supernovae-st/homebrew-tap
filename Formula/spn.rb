@@ -14,7 +14,7 @@ class Spn < Formula
   on_macos do
     on_arm do
       url "https://github.com/supernovae-st/supernovae-cli/releases/download/v0.10.0/spn-aarch64-apple-darwin.tar.gz"
-      sha256 "663f8ab14db7d409320ce9a6d8ba44d6714362b476e92b03f976c9c56f3f3f75"
+      sha256 "3a6553f7eb25e1da7cff6d466d483868e13757cd76fd25ba920d05bd2446eff7"
     end
     on_intel do
       url "https://github.com/supernovae-st/supernovae-cli/releases/download/v0.10.0/spn-x86_64-apple-darwin.tar.gz"

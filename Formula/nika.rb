@@ -9,7 +9,7 @@ class Nika < Formula
   on_macos do
     on_arm do
       url "https://github.com/supernovae-st/nika/releases/download/v0.21.0/nika-macos-arm64-0.21.0.tar.gz"
-      sha256 "a2bb4e2c46b5c1b9c6e8f8bf92fa45947b67689aa43cd4c34c32d46d72de5373"
+      sha256 "6d2e357788e9553aaef4f4053ee627eafe6cb119bf168b3594be91dce241e6cf"
     end
     on_intel do
       url "https://github.com/supernovae-st/nika/releases/download/v0.21.0/nika-macos-x64-0.21.0.tar.gz"
