@@ -1,46 +1,46 @@
 # Formula/novanet.rb
-#
-# INTERNAL USE ONLY
-# This formula builds from a private repository (supernovae-st/novanet).
-# External users cannot install this formula - it requires SSH access to the repo.
-#
-# For SuperNovae team members:
-#   1. Ensure you have SSH access to github.com:supernovae-st/novanet.git
-#   2. brew install supernovae-st/tap/novanet
-#
+# v0.16.2: Knowledge Graph CLI + TUI + MCP Server
 class Novanet < Formula
   desc "Knowledge graph CLI + TUI with MCP server for AI applications"
   homepage "https://github.com/supernovae-st/novanet"
   version "0.16.2"
   license "LicenseRef-Proprietary"
 
-  # Build from source - private repository (requires SSH access)
-  url "https://github.com/supernovae-st/novanet.git",
-      tag:      "v0.16.2",
-      revision: "c8816caa1dcca3a03264c6e49c2dee8cd0728a88"
+  on_macos do
+    on_arm do
+      url "https://github.com/supernovae-st/novanet/releases/download/v0.16.2/novanet-macos-arm64-0.16.2.tar.gz"
+      sha256 "e9ba9578f75dec75cf4454bc53d2009b078b4f536e1627fd2042ff7231f6fced"
+    end
+    on_intel do
+      # TODO: Add x64 binary when CI releases are set up
+      odie "NovaNet is not yet available for Intel Macs. Please use Apple Silicon."
+    end
+  end
 
-  depends_on "rust" => :build
+  on_linux do
+    # TODO: Add Linux binaries when CI releases are set up
+    odie "NovaNet is not yet available for Linux. Coming soon."
+  end
 
   def install
-    cd "tools/novanet" do
-      system "cargo", "install", *std_cargo_args
-    end
+    bin.install "novanet"
   end
 
   def caveats
     <<~EOS
-      INTERNAL USE ONLY - This formula requires access to a private repository.
-
       NovaNet requires Neo4j database for full functionality.
 
-      To start Neo4j:
+      Quick setup:
+        novanet init    # Interactive setup wizard
+
+      Start Neo4j:
         brew services start neo4j
 
       Or use Docker:
         docker run -d --name neo4j -p 7474:7474 -p 7687:7687 neo4j
 
-      Configuration:
-        novanet init    # Interactive setup wizard
+      Documentation:
+        https://github.com/supernovae-st/novanet
     EOS
   end
 
