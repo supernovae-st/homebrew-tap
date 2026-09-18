@@ -43,7 +43,7 @@ commit is the engine build it was cut from. This README never repeats the
 number: the tap's CI refuses any version literal here, so the pin has exactly
 one home.
 
-Write `hello.nika.yaml`. The `mock/echo` model rehearses with no key and no
+Write `hello.nika`. The `mock/echo` model rehearses with no key and no
 network:
 
 ```yaml
@@ -62,7 +62,7 @@ outputs:
 Audit it before anything runs:
 
 ```sh
-nika check hello.nika.yaml
+nika check hello.nika
 ```
 
 ```
@@ -77,7 +77,7 @@ nika check hello.nika.yaml
 Run it under a zero ceiling:
 
 ```sh
-nika run hello.nika.yaml --quiet --max-cost-usd 0
+nika run hello.nika --quiet --max-cost-usd 0
 ```
 
 ```
@@ -164,7 +164,8 @@ brew test supernovae-st/tap/nika
 
 This runs the formula's own test block against the installed keg:
 `nika --version` must carry the pinned version, a nine-key workflow must pass
-`nika check`, and a one-task workflow must run to `1/1 done` on `mock/echo`.
+`nika check`, `nika compile hello` must write a checkable program, and a
+one-task workflow must run to `1/1 done` on `mock/echo`.
 An install that can check but not run fails here. The same block runs in
 this tap's CI on every pull request, after a real install from the pull
 request's checkout.

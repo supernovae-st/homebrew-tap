@@ -45,7 +45,7 @@ class Nika < Formula
 
       Editors and agents:
         nika wire cursor|claude|vscode                  # explicit MCP wiring (idempotent)
-        nika new chain my-first.nika.yaml               # scaffold - then: nika check
+        nika compile hello my-first.nika               # write an offline workflow - then: nika check
 
       Agent plugin kit (skills - subagents - /nika:* commands - hooks - MCP, one bundle):
         claude plugin marketplace add supernovae-st/nika-plugins && claude plugin install nika@nika
@@ -62,7 +62,7 @@ class Nika < Formula
 
     # A minimal nine-key workflow must pass static checking (the `check` ladder).
     # Identity is `nika: <kebab-id>` (nine keys).
-    (testpath/"t.nika.yaml").write <<~YAML
+    (testpath/"brew-smoke.nika").write <<~YAML
       nika: brew-smoke
       permits:
         exec: ["echo"]
@@ -70,19 +70,24 @@ class Nika < Formula
         hello:
           exec: { command: ["echo", "hello"] }
     YAML
-    assert_match "PLAN", shell_output("#{bin}/nika check #{testpath}/t.nika.yaml")
+    assert_match "PLAN", shell_output("#{bin}/nika check #{testpath}/brew-smoke.nika")
+
+    # The authoring command taught in caveats must produce a checkable program.
+    system bin/"nika", "compile", "hello", testpath/"my-first.nika"
+    assert_path_exists testpath/"my-first.nika"
+    assert_match "PLAN", shell_output("#{bin}/nika check #{testpath}/my-first.nika")
 
     # The engine must also EXECUTE, not just statically check — an install that
     # can `check` but not `run` passes the line above yet is broken for users.
     # A one-task infer under the mock provider is hermetic (no network, no key,
     # no permits) and proves the run path end to end.
-    (testpath/"r.nika.yaml").write <<~YAML
+    (testpath/"brew-run-smoke.nika").write <<~YAML
       nika: brew-run-smoke
       tasks:
         greet:
           infer: { prompt: "say hello" }
     YAML
     assert_match "1/1 done",
-      shell_output("#{bin}/nika run #{testpath}/r.nika.yaml --model mock/echo")
+      shell_output("#{bin}/nika run #{testpath}/brew-run-smoke.nika --model mock/echo")
   end
 end
