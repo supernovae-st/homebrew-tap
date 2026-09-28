@@ -25,14 +25,16 @@
   <a href="https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/supernovae-st/homebrew-tap"><img src="https://archive.softwareheritage.org/badge/origin/https://github.com/supernovae-st/homebrew-tap/" alt="Archived by Software Heritage"></a>
 </p>
 
+<p align="center"><strong>Watch Nika audit a workflow before it runs, then run it on a local model.</strong></p>
+
 <p align="center">
-  <a href="https://github.com/supernovae-st/nika/raw/refs/heads/main/media/videos/nika-hero.mp4">
-    <img src="https://raw.githubusercontent.com/supernovae-st/nika/main/media/nika-hero.gif"
-         alt="nika check audits a meeting-notes workflow before anything runs, then nika run executes it on a local model and writes the action items it found" width="760">
+  <a href="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/nika-hero.optimized.gif">
+    <img src="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/nika-hero.optimized.gif"
+         alt="nika check audits a meeting-notes workflow before anything runs, then nika run executes it on a local model and writes the action items it found" width="960">
   </a>
 </p>
 
-<p align="center"><sub>Audit first, then run: a real run on a local model, captured from the CLI. Click the clip to watch the video.</sub></p>
+<p align="center"><sub>Audit first, then run: notice that the run starts from a file the check has already marked run ready, and ends with the meeting's action items written as typed output, each with its owner. A real run on a local model, captured from the CLI. Click the clip to see it full size.</sub></p>
 
 ## What is Nika?
 
@@ -83,12 +85,17 @@ can verify. One Rust binary, local-first, open source (AGPL-3.0).
    runs.
 
 <!-- motion: brew install to a first verified run in one minute -->
+
+**Watch the four commands of step 2 as they ran.**
+
 <p align="center">
-  <a href="https://github.com/supernovae-st/nika/raw/refs/heads/main/media/videos/full-loop.mp4">
+  <a href="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/full-loop.optimized.gif">
     <img src="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/full-loop.optimized.gif"
-         alt="The four commands as they ran: compile writes hello.nika, check passes every audit line, run is a mock/echo rehearsal, and trace verify reads back the chain the run printed" width="760">
+         alt="The four commands as they ran: compile writes hello.nika, check passes every audit line, run is a mock/echo rehearsal, and trace verify reads back the chain the run printed" width="860">
   </a>
 </p>
+
+<p align="center"><sub>Notice the end: <code>nika trace verify</code> reads back the same chain hash the run printed. All four commands are captured from the real CLI, offline; the run is a <code>mock/echo</code> rehearsal.</sub></p>
 
 > [!NOTE]
 > A `mock/echo` run proves that the workflow runs, not that a model answered.
@@ -179,30 +186,36 @@ every provider this binary knows.
 
 ## What you can do next
 
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <a href="https://github.com/supernovae-st/nika/raw/refs/heads/main/media/videos/workflow-gallery.mp4"><img src="https://raw.githubusercontent.com/supernovae-st/nika/main/media/posters/workflow-gallery.png" alt="The ready-made workflows nika try lists: a numbered path of lessons and jobs such as meeting-actions and pr-review-fanout, each tagged with the verbs it uses" width="100%"></a>
-      <br><strong>Start from a ready-made workflow</strong><br>
-      <code>nika try</code> lists the examples built into the binary and
-      rehearses any of them on the mock model, without writing to your folder.
-    </td>
-    <td width="33%" valign="top">
-      <a href="https://github.com/supernovae-st/nika/raw/refs/heads/main/media/videos/static-check-fix.mp4"><img src="https://raw.githubusercontent.com/supernovae-st/nika/main/media/posters/static-check-fix.png" alt="nika check catches two defects in a pull-request review workflow, then the real fix and the clean re-check that ends run ready" width="100%"></a>
-      <br><strong>Catch mistakes before anything runs</strong><br>
-      <code>nika check</code> names each problem and its fix.
-      <code>nika run</code> checks again and refuses a file that fails.
-    </td>
-    <td width="33%" valign="top">
-      <a href="https://github.com/supernovae-st/nika/raw/refs/heads/main/media/videos/editor-diagnostics.mp4"><img src="https://raw.githubusercontent.com/supernovae-st/nika/main/media/posters/editor-diagnostics.png" alt="The language server reports the same problems inside the editor, and one keystroke fixes them" width="100%"></a>
-      <br><strong>See problems as you type</strong><br>
-      The binary ships the language server, <code>nika lsp</code>, that the
-      <a href="https://github.com/supernovae-st/nika-vscode">editor extension</a> uses.
-    </td>
-  </tr>
-</table>
+**Start from a ready-made workflow.** `nika try` lists the examples built into
+the binary and rehearses any of them on the mock model, without writing to your
+folder. Watch the list it shows:
 
-<p align="center"><sub>Each poster opens a short video captured from the real CLI.</sub></p>
+<p align="center">
+  <a href="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/workflow-gallery.optimized.gif">
+    <img src="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/workflow-gallery.optimized.gif"
+         alt="The ready-made workflows nika try lists: a numbered path of lessons and jobs such as meeting-actions and pr-review-fanout, each tagged with the verbs it uses" width="860">
+  </a>
+</p>
+
+<p align="center"><sub>Notice that each job, from <code>meeting-actions</code> to <code>pr-review-fanout</code>, is tagged with the verbs it uses, and that the numbered path of lessons starts at <code>nika try 01-hello</code>, offline. The names, verbs and lines are the real <code>nika try</code> listing.</sub></p>
+
+**Catch mistakes before anything runs.** `nika check` names each problem and
+its fix. `nika run` checks again and refuses a file that fails. Watch the check
+catch two defects in a pull-request review workflow:
+
+<p align="center">
+  <a href="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/static-check-fix.optimized.gif">
+    <img src="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/static-check-fix.optimized.gif"
+         alt="nika check catches two defects in a pull-request review workflow, then the real fix and the clean re-check that ends run ready" width="860">
+  </a>
+</p>
+
+<p align="center"><sub>Notice that each finding names its fix, down to a did-you-mean for a misspelled task. The fix is a real diff, and the re-check ends run ready. Captured from the real CLI; nothing runs.</sub></p>
+
+**See problems as you type.** The binary ships the language server,
+`nika lsp`, that the [editor extension](https://github.com/supernovae-st/nika-vscode)
+uses. ▶ [Watch the editor show the same problems, fixed in one keystroke](https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/editor-diagnostics.optimized.gif):
+the diagnostics are the real language server's; the editor is an illustration.
 
 A few more first commands:
 
