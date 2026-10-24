@@ -128,7 +128,7 @@ nika check · hello.nika
       wave 1 greet (infer · mock/echo)
  ✔ MODELS   1 model resolves in this binary · this machine's paths on the ACCESS line
  ✔ ACCESS   mock/echo → mock (mock · local · observed) · mock · never dials · nothing to judge
- ✔ COST     $0.0000 – $0.0000 worst-case output ceiling · prompts, exec + mcp unpriced · prices 2026-09-23
+ ✔ COST     $0.0000 – $0.0000 worst-case output ceiling · prompts, exec + mcp unpriced · prices 2026-10-12
    greet  mock/echo  ≤128 tk  $0.0000
  ○ ENERGY   unpriced — no sourced Wh figure for any task model · never 0 Wh (NEP-0018)
  ✔ SECRETS  no declared secret reaches an effect · model echo untracked
@@ -152,7 +152,7 @@ rehearsal: mock/echo answers by echoing the prompt — not a real answer · a re
   🦋 nika · hello · 1 task
      permits ✓ declared boundary · default-deny
 
-  ✔  greet  infer · mock/echo  0ms
+  ✔  greet  infer · mock/echo  3ms
   1 task · 1 wave · 0 retries · 10 tok
   ── 1/1 done · unpriced (1 call) · elapsed 0.0s ─────────────────
     wrote .nika/traces
@@ -160,11 +160,11 @@ rehearsal: mock/echo answers by echoing the prompt — not a real answer · a re
     see it whole: nika trace outputs
     rehearsal · a mock model echoed the prompt — not a real answer
   explore: nika run hello.nika --json > run.ndjson · nika trace outputs run.ndjson
-    trace: .nika/traces/2026-09-28T18-59-04Z-4cc0.ndjson · 5 events · chain b4d1867cebd541a3aa581b0ed74363408363d3353e9450b21897348f05901217
+    trace: .nika/traces/2026-10-24T10-34-56Z-399b.ndjson · 5 events · chain 99f042d4ec10202c1c96927c9fb2d65ed806fd59f328d105999c09778887b892
 
 $ nika trace verify
-nika trace: reading .nika/traces/2026-09-28T18-59-04Z-4cc0.ndjson (the workspace latest)
-OK — 5 events · chain intact · head b4d1867cebd541a3aa581b0ed74363408363d3353e9450b21897348f05901217
+nika trace: reading .nika/traces/2026-10-24T10-34-56Z-399b.ndjson (the workspace latest)
+OK — 5 events · chain intact · head 99f042d4ec10202c1c96927c9fb2d65ed806fd59f328d105999c09778887b892
   internally consistent (tamper-evident, not tamper-proof) — compare the head
   against the one the run printed to close the loop
 ```
