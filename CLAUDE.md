@@ -34,7 +34,7 @@ When a new Nika version is released:
 
 1. Verify release assets exist: `gh release view vX.Y.Z --repo supernovae-st/nika --json assets`
 2. Update the `version` field in `Formula/nika.rb`
-3. Update each `sha256` from the `.sha256` files published alongside the tarballs
+3. Update each `sha256` from the release's `SHA256SUMS` (one file for the four archives)
 4. Test locally: `brew install --build-from-source Formula/nika.rb`
 
 The release tarball naming convention is:
