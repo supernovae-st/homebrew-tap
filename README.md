@@ -67,6 +67,11 @@ can verify. One Rust binary, local-first, open source (AGPL-3.0).
    nika --version
    ```
 
+   Recent Homebrew versions load a third-party tap's formulae only once you
+   trust them. Installing by the full name, as above, records that trust for
+   this formula. If an older install, or a command that names only `nika`, is
+   refused as untrusted, run `brew trust supernovae-st/tap` once.
+
 2. **Write, check, run and verify a first workflow.** It runs on `mock/echo`,
    a rehearsal model built into Nika that echoes the prompt back. No account,
    no API key, and it works offline.
@@ -312,8 +317,11 @@ exist.
 |---|---|
 | Check the install | `brew test supernovae-st/tap/nika` |
 | Diagnose the machine | `nika doctor` |
-| Update | `brew update && brew upgrade nika` |
-| Remove | `brew uninstall nika && brew untap supernovae-st/tap` |
+| Update | `brew update && brew upgrade supernovae-st/tap/nika` |
+| Remove | `brew uninstall supernovae-st/tap/nika && brew untap supernovae-st/tap` |
+
+The full name works whether or not you have trusted the whole tap; `brew trust
+supernovae-st/tap` once lets the short `nika` work too.
 
 `brew test` runs the formula's test block against what you installed. It
 passes only if `nika --version` reports the pinned version, a small workflow
