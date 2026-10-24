@@ -89,8 +89,6 @@ can verify. One Rust binary, local-first, open source (AGPL-3.0).
    you want done, then review the `.nika` file it proposes before anything
    runs.
 
-<!-- motion: brew install to a first verified run in one minute -->
-
 **Watch the four commands of step 2 as they ran.**
 
 <p align="center">
@@ -101,6 +99,18 @@ can verify. One Rust binary, local-first, open source (AGPL-3.0).
 </p>
 
 <p align="center"><sub>Notice the end: <code>nika trace verify</code> reads back the same chain hash the run printed. All four commands are captured from the real CLI, offline; the run is a <code>mock/echo</code> rehearsal.</sub></p>
+
+**Then step 3: watch `nika try 01-hello` rehearse the first lesson and leave
+your folder untouched.**
+
+<p align="center">
+  <a href="media/first-minute.gif">
+    <img src="media/first-minute.gif"
+         alt="nika try 01-hello prints the first lesson's workflow, rehearses it on mock/echo with no key, ends 1/1 done and points at nika compile --list; ls -A then shows the folder is still empty" width="860">
+  </a>
+</p>
+
+<p align="center"><sub>Notice the rehearsal runs in a scratch copy and points you at <code>nika compile --list</code>, and <code>ls -A</code> finds nothing written. Recorded in a fresh home with the binary from the release archive the formula pins; the install itself is not part of the recording (<a href="scripts/media/first-minute.tape">first-minute.tape</a>).</sub></p>
 
 > [!NOTE]
 > A `mock/echo` run proves that the workflow runs, not that a model answered.
