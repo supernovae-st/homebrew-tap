@@ -106,11 +106,11 @@ your folder untouched.**
 <p align="center">
   <a href="media/first-minute.gif">
     <img src="media/first-minute.gif"
-         alt="nika try 01-hello prints the first lesson's workflow, rehearses it on mock/echo with no key, ends 1/1 done and points at nika compile --list; ls -A then shows the folder is still empty" width="860">
+         alt="nika --version prints the release being recorded; nika try 01-hello prints the first lesson's workflow, rehearses it on mock/echo with no key, ends 1/1 done and points at nika compile --list; ls -A then shows the folder is still empty" width="860">
   </a>
 </p>
 
-<p align="center"><sub>Notice the rehearsal runs in a scratch copy and points you at <code>nika compile --list</code>, and <code>ls -A</code> finds nothing written. Recorded in a fresh home with the binary from the release archive the formula pins; the install itself is not part of the recording (<a href="scripts/media/first-minute.tape">first-minute.tape</a>).</sub></p>
+<p align="center"><sub>Notice the version it prints first: that is the release recorded, from the archive the formula pinned at the time. Then the rehearsal runs in a scratch copy and points you at <code>nika compile --list</code>, and <code>ls -A</code> finds nothing written. Recorded in a fresh home; the install itself is not part of the recording (<a href="scripts/media/first-minute.tape">first-minute.tape</a>).</sub></p>
 
 > [!NOTE]
 > A `mock/echo` run proves that the workflow runs, not that a model answered.
@@ -123,8 +123,8 @@ your folder untouched.**
 <details>
 <summary><strong>See what each command prints</strong></summary>
 
-Captured from the released binary on a fresh machine. Your trace file name
-and chain hash will differ.
+Captured on 24 October 2026 with the 0.123 release, in a fresh HOME. Your
+trace file name and chain hash will differ.
 
 ```text
 $ nika compile hello hello.nika

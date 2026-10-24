@@ -1,10 +1,12 @@
 # first-minute.tape — the first proof right after `brew install`, in ~20
-# seconds: `nika try 01-hello` shows the first lesson, rehearses it on the
-# mock model with no key and no network, and leaves the folder empty. Every
-# command is the released binary's own; the sandbox HOME (/tmp/you) is staged
-# by scripts/media/render.sh, which writes the shell.zsh sourced below. The
-# install itself is not recorded. House theme = the engine's nika-hero
-# palette.
+# seconds: `nika --version` names the release being recorded, then
+# `nika try 01-hello` shows the first lesson, rehearses it on the mock model
+# with no key and no network, and leaves the folder empty. The version comes
+# first because the formula moves with each release and the README cannot
+# name one. Every command is the released binary's own; the sandbox HOME
+# (/tmp/you) is staged by scripts/media/render.sh, which writes the
+# shell.zsh sourced below. The install itself is not recorded. House theme =
+# the engine's nika-hero palette.
 Output first-minute.gif
 
 Set Shell zsh
@@ -27,7 +29,13 @@ Type ". /tmp/you/shell.zsh && clear"
 Enter
 Show
 
-Type "# just installed · the first lesson, rehearsed offline with no key"
+Type "# just installed · which release is this?"
+Enter
+Sleep 500ms
+Type "nika --version"
+Enter
+Sleep 1800ms
+Type "# the first lesson, rehearsed offline with no key"
 Enter
 Sleep 600ms
 Type "nika try 01-hello"
