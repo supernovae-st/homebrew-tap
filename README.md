@@ -67,6 +67,11 @@ can verify. One Rust binary, local-first, open source (AGPL-3.0).
    nika --version
    ```
 
+   Recent Homebrew versions load a third-party tap's formulae only once you
+   trust them. Installing by the full name, as above, records that trust for
+   this formula. If an older install, or a command that names only `nika`, is
+   refused as untrusted, run `brew trust supernovae-st/tap` once.
+
 2. **Write, check, run and verify a first workflow.** It runs on `mock/echo`,
    a rehearsal model built into Nika that echoes the prompt back. No account,
    no API key, and it works offline.
@@ -84,8 +89,6 @@ can verify. One Rust binary, local-first, open source (AGPL-3.0).
    you want done, then review the `.nika` file it proposes before anything
    runs.
 
-<!-- motion: brew install to a first verified run in one minute -->
-
 **Watch the four commands of step 2 as they ran.**
 
 <p align="center">
@@ -96,6 +99,18 @@ can verify. One Rust binary, local-first, open source (AGPL-3.0).
 </p>
 
 <p align="center"><sub>Notice the end: <code>nika trace verify</code> reads back the same chain hash the run printed. All four commands are captured from the real CLI, offline; the run is a <code>mock/echo</code> rehearsal.</sub></p>
+
+**Then step 3: watch `nika try 01-hello` rehearse the first lesson and leave
+your folder untouched.**
+
+<p align="center">
+  <a href="media/first-minute.gif">
+    <img src="media/first-minute.gif"
+         alt="nika --version prints the release being recorded; nika try 01-hello prints the first lesson's workflow, rehearses it on mock/echo with no key, ends 1/1 done and points at nika compile --list; ls -A then shows the folder is still empty" width="860">
+  </a>
+</p>
+
+<p align="center"><sub>Notice the version it prints first: that is the release recorded, from the archive the formula pinned at the time. Then the rehearsal runs in a scratch copy and points you at <code>nika compile --list</code>, and <code>ls -A</code> finds nothing written. Recorded in a fresh home; the install itself is not part of the recording (<a href="scripts/media/first-minute.tape">first-minute.tape</a>).</sub></p>
 
 > [!NOTE]
 > A `mock/echo` run proves that the workflow runs, not that a model answered.
@@ -108,8 +123,8 @@ can verify. One Rust binary, local-first, open source (AGPL-3.0).
 <details>
 <summary><strong>See what each command prints</strong></summary>
 
-Captured from the released binary on a fresh machine. Your trace file name
-and chain hash will differ.
+Captured on 24 October 2026 with the 0.123 release, in a fresh HOME. Your
+trace file name and chain hash will differ.
 
 ```text
 $ nika compile hello hello.nika
@@ -123,7 +138,7 @@ nika check · hello.nika
       wave 1 greet (infer · mock/echo)
  ✔ MODELS   1 model resolves in this binary · this machine's paths on the ACCESS line
  ✔ ACCESS   mock/echo → mock (mock · local · observed) · mock · never dials · nothing to judge
- ✔ COST     $0.0000 – $0.0000 worst-case output ceiling · prompts, exec + mcp unpriced · prices 2026-09-23
+ ✔ COST     $0.0000 – $0.0000 worst-case output ceiling · prompts, exec + mcp unpriced · prices 2026-10-12
    greet  mock/echo  ≤128 tk  $0.0000
  ○ ENERGY   unpriced — no sourced Wh figure for any task model · never 0 Wh (NEP-0018)
  ✔ SECRETS  no declared secret reaches an effect · model echo untracked
@@ -147,7 +162,7 @@ rehearsal: mock/echo answers by echoing the prompt — not a real answer · a re
   🦋 nika · hello · 1 task
      permits ✓ declared boundary · default-deny
 
-  ✔  greet  infer · mock/echo  0ms
+  ✔  greet  infer · mock/echo  3ms
   1 task · 1 wave · 0 retries · 10 tok
   ── 1/1 done · unpriced (1 call) · elapsed 0.0s ─────────────────
     wrote .nika/traces
@@ -155,11 +170,11 @@ rehearsal: mock/echo answers by echoing the prompt — not a real answer · a re
     see it whole: nika trace outputs
     rehearsal · a mock model echoed the prompt — not a real answer
   explore: nika run hello.nika --json > run.ndjson · nika trace outputs run.ndjson
-    trace: .nika/traces/2026-09-28T18-59-04Z-4cc0.ndjson · 5 events · chain b4d1867cebd541a3aa581b0ed74363408363d3353e9450b21897348f05901217
+    trace: .nika/traces/2026-10-24T10-34-56Z-399b.ndjson · 5 events · chain 99f042d4ec10202c1c96927c9fb2d65ed806fd59f328d105999c09778887b892
 
 $ nika trace verify
-nika trace: reading .nika/traces/2026-09-28T18-59-04Z-4cc0.ndjson (the workspace latest)
-OK — 5 events · chain intact · head b4d1867cebd541a3aa581b0ed74363408363d3353e9450b21897348f05901217
+nika trace: reading .nika/traces/2026-10-24T10-34-56Z-399b.ndjson (the workspace latest)
+OK — 5 events · chain intact · head 99f042d4ec10202c1c96927c9fb2d65ed806fd59f328d105999c09778887b892
   internally consistent (tamper-evident, not tamper-proof) — compare the head
   against the one the run printed to close the loop
 ```
@@ -312,8 +327,11 @@ exist.
 |---|---|
 | Check the install | `brew test supernovae-st/tap/nika` |
 | Diagnose the machine | `nika doctor` |
-| Update | `brew update && brew upgrade nika` |
-| Remove | `brew uninstall nika && brew untap supernovae-st/tap` |
+| Update | `brew update && brew upgrade supernovae-st/tap/nika` |
+| Remove | `brew uninstall supernovae-st/tap/nika && brew untap supernovae-st/tap` |
+
+The full name works whether or not you have trusted the whole tap; `brew trust
+supernovae-st/tap` once lets the short `nika` work too.
 
 `brew test` runs the formula's test block against what you installed. It
 passes only if `nika --version` reports the pinned version, a small workflow
@@ -349,7 +367,7 @@ workflow.
 | 🦋 | [nika](https://github.com/supernovae-st/nika) | The engine and CLI: write, check, run and verify AI workflows |
 | 📖 | [nika-docs](https://github.com/supernovae-st/nika-docs) | The documentation, live at [docs.nika.sh](https://docs.nika.sh) |
 | 📜 | [nika-spec](https://github.com/supernovae-st/nika-spec) | The language specification and the suite that proves an engine follows it |
-| 🧩 | [nika-vscode](https://github.com/supernovae-st/nika-vscode) | The editor extension: your workflow as a live graph, errors as you type |
+| 🧩 | [nika-vscode](https://github.com/supernovae-st/nika-vscode) | The editor extension, frozen at 0.120 and not qualified with 0.123: use `nika lsp` and the JSON Schema |
 | 🟦 | [nika-client](https://github.com/supernovae-st/nika-client) | Run and verify workflows from TypeScript |
 | ✅ | [nika-action](https://github.com/supernovae-st/nika-action) | A GitHub Action that posts a `nika check` verdict on your pull requests |
 | 🚀 | [nika-actions-starter](https://github.com/supernovae-st/nika-actions-starter) | A ready template: workflows, editor setup and CI from the first push |

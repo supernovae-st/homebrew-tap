@@ -1,15 +1,19 @@
-# first-minute.tape — the moment right after `brew install`: the mirror
-# greets the machine, then the first proof runs offline on the mock
-# provider, zero keys. Every command is the released binary's own; the
-# sandbox HOME (/tmp/you) is staged by scripts/media/render.sh. House
-# theme = the engine's nika-hero palette.
+# first-minute.tape — the first proof right after `brew install`, in ~20
+# seconds: `nika --version` names the release being recorded, then
+# `nika try 01-hello` shows the first lesson, rehearses it on the mock model
+# with no key and no network, and leaves the folder empty. The version comes
+# first because the formula moves with each release and the README cannot
+# name one. Every command is the released binary's own; the sandbox HOME
+# (/tmp/you) is staged by scripts/media/render.sh, which writes the
+# shell.zsh sourced below. The install itself is not recorded. House theme =
+# the engine's nika-hero palette.
 Output first-minute.gif
 
 Set Shell zsh
 Set FontFamily "JetBrains Mono"
 Set FontSize 21
 Set Width 1420
-Set Height 780
+Set Height 940
 Set Padding 24
 Set Margin 22
 Set MarginFill "#4f86ff"
@@ -21,23 +25,29 @@ Set TypingSpeed 30ms
 Set PlaybackSpeed 1.0
 
 Hide
-Type "export HOME=/tmp/you TMPDIR=/tmp && cd /tmp/you/demo && unset -m '*API_KEY*' '*_TOKEN*' '*SECRET*' 2>/dev/null; setopt interactive_comments && clear"
+Type ". /tmp/you/shell.zsh && clear"
 Enter
 Show
 
-Type "# just installed · meet the binary"
+Type "# just installed · which release is this?"
+Enter
+Sleep 500ms
+Type "nika --version"
+Enter
+Sleep 1800ms
+Type "# the first lesson, rehearsed offline with no key"
 Enter
 Sleep 600ms
-Type "nika welcome"
+Type "nika try 01-hello"
 Enter
-Sleep 5400ms
+Sleep 7500ms
 
 Type "clear"
 Enter
-Type "# the first proof · offline · zero keys"
+Type "# the rehearsal wrote nothing in this folder"
 Enter
-Sleep 700ms
-Type "nika try 01-hello"
+Sleep 500ms
+Type "ls -A"
 Enter
-Sleep 3200ms
-Sleep 1400ms
+Sleep 2400ms
+Sleep 1200ms
