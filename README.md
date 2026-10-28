@@ -123,8 +123,8 @@ your folder untouched.**
 <details>
 <summary><strong>See what each command prints</strong></summary>
 
-Captured on 24 October 2026 with the 0.123 release, in a fresh HOME. Your
-trace file name and chain hash will differ.
+Captured on 28 October 2026 with the 0.124 release published that day, in a
+fresh HOME. Your trace file name and chain hash will differ.
 
 ```text
 $ nika compile hello hello.nika
@@ -137,7 +137,7 @@ nika check · hello.nika
  ✔ PLAN     1 wave · 1 task · max parallelism 1
       wave 1 greet (infer · mock/echo)
  ✔ MODELS   1 model resolves in this binary · this machine's paths on the ACCESS line
- ✔ ACCESS   mock/echo → mock (mock · local · observed) · mock · never dials · nothing to judge
+ ✔ ACCESS   mock/echo → mock (mock · local · observed) · mock · this model route never dials
  ✔ COST     $0.0000 – $0.0000 worst-case output ceiling · prompts, exec + mcp unpriced · prices 2026-10-12
    greet  mock/echo  ≤128 tk  $0.0000
  ○ ENERGY   unpriced — no sourced Wh figure for any task model · never 0 Wh (NEP-0018)
@@ -162,19 +162,20 @@ rehearsal: mock/echo answers by echoing the prompt — not a real answer · a re
   🦋 nika · hello · 1 task
      permits ✓ declared boundary · default-deny
 
-  ✔  greet  infer · mock/echo  3ms
+  ✔  greet  infer · mock/echo  2ms
   1 task · 1 wave · 0 retries · 10 tok
   ── 1/1 done · unpriced (1 call) · elapsed 0.0s ─────────────────
     wrote .nika/traces
+    verify it: nika trace verify
     said "mock(echo) · Say hello in French, in one sh…"
     see it whole: nika trace outputs
     rehearsal · a mock model echoed the prompt — not a real answer
   explore: nika run hello.nika --json > run.ndjson · nika trace outputs run.ndjson
-    trace: .nika/traces/2026-10-24T10-34-56Z-399b.ndjson · 5 events · chain 99f042d4ec10202c1c96927c9fb2d65ed806fd59f328d105999c09778887b892
+    trace: .nika/traces/2026-10-28T10-05-42Z-0d20.ndjson · 5 events · chain 2725cf9d929a9701e6e31f3ba38c7ef92dc02e1d661e641f4266d2a667e43358
 
 $ nika trace verify
-nika trace: reading .nika/traces/2026-10-24T10-34-56Z-399b.ndjson (the workspace latest)
-OK — 5 events · chain intact · head 99f042d4ec10202c1c96927c9fb2d65ed806fd59f328d105999c09778887b892
+nika trace: reading .nika/traces/2026-10-28T10-05-42Z-0d20.ndjson (the workspace latest)
+OK — 5 events · chain intact · head 2725cf9d929a9701e6e31f3ba38c7ef92dc02e1d661e641f4266d2a667e43358
   internally consistent (tamper-evident, not tamper-proof) — compare the head
   against the one the run printed to close the loop
 ```
@@ -367,7 +368,7 @@ workflow.
 | 🦋 | [nika](https://github.com/supernovae-st/nika) | The engine and CLI: write, check, run and verify AI workflows |
 | 📖 | [nika-docs](https://github.com/supernovae-st/nika-docs) | The documentation, live at [docs.nika.sh](https://docs.nika.sh) |
 | 📜 | [nika-spec](https://github.com/supernovae-st/nika-spec) | The language specification and the suite that proves an engine follows it |
-| 🧩 | [nika-vscode](https://github.com/supernovae-st/nika-vscode) | The editor extension, frozen at 0.120 and not qualified with 0.123: use `nika lsp` and the JSON Schema |
+| 🧩 | [nika-vscode](https://github.com/supernovae-st/nika-vscode) | The editor extension, frozen at 0.120 and not qualified with 0.124: use `nika lsp` and the JSON Schema |
 | 🟦 | [nika-client](https://github.com/supernovae-st/nika-client) | Run and verify workflows from TypeScript |
 | ✅ | [nika-action](https://github.com/supernovae-st/nika-action) | A GitHub Action that posts a `nika check` verdict on your pull requests |
 | 🚀 | [nika-actions-starter](https://github.com/supernovae-st/nika-actions-starter) | A ready template: workflows, editor setup and CI from the first push |
