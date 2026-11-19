@@ -4,8 +4,8 @@ Vendor-neutral agent entry per the AGENTS.md convention (agents.md).
 
 ## What this repo is
 
-The official **Homebrew tap** for [Nika](https://github.com/supernovae-st/nika)
-— `brew install supernovae-st/tap/nika`. One formula (`Formula/nika.rb`).
+The official **Homebrew tap** for [Nika](https://github.com/nika-open/nika)
+— `brew install nika-open/tap/nika`. One formula (`Formula/nika.rb`).
 
 ## Load-bearing facts (verify in-repo · never from memory)
 
@@ -14,8 +14,8 @@ The official **Homebrew tap** for [Nika](https://github.com/supernovae-st/nika)
   hand-typed copy here drifted once: said 0.90.0 while the formula was on
   0.91.0). `main` in the engine may be on a later `-dev` version; never
   publish that through Homebrew until a matching release tag and assets exist.
-- The language spec lives at `supernovae-st/nika-spec` (Apache-2.0) ·
-  the engine at `supernovae-st/nika` (AGPL-3.0-or-later) · docs at
+- The language spec lives at `nika-open/nika-spec` (Apache-2.0) ·
+  the engine at `nika-open/nika` (AGPL-3.0-or-later) · docs at
   `docs.nika.sh`.
 
 ## Editing rules

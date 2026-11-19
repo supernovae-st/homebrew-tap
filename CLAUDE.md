@@ -1,11 +1,11 @@
 # homebrew-tap
 
-**Homebrew Tap** for [Nika](https://github.com/supernovae-st/nika).
+**Homebrew Tap** for [Nika](https://github.com/nika-open/nika).
 
 ## Installation
 
 ```bash
-brew install supernovae-st/tap/nika
+brew install nika-open/tap/nika
 ```
 
 ## Formulas
@@ -32,7 +32,7 @@ a dev workspace version or to a tag that does not exist.
 
 When a new Nika version is released:
 
-1. Verify release assets exist: `gh release view vX.Y.Z --repo supernovae-st/nika --json assets`
+1. Verify release assets exist: `gh release view vX.Y.Z --repo nika-open/nika --json assets`
 2. Update the `version` field in `Formula/nika.rb`
 3. Update each `sha256` from the release's `SHA256SUMS` (one file for the four archives)
 4. Test locally: `brew install --build-from-source Formula/nika.rb`
@@ -47,7 +47,7 @@ nika-{macos|linux}-{arm64|x64}-{version}.tar.gz
 
 | Repo | Description |
 |------|-------------|
-| [nika](https://github.com/supernovae-st/nika) | Nika source code |
+| [nika](https://github.com/nika-open/nika) | Nika source code |
 
 ## Conventions
 
