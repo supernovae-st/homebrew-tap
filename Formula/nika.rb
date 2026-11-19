@@ -9,20 +9,20 @@ class Nika < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/supernovae-st/nika/releases/download/v#{version}/nika-macos-arm64-#{version}.tar.gz"
+      url "https://github.com/nika-open/nika/releases/download/v#{version}/nika-macos-arm64-#{version}.tar.gz"
       sha256 "fc2217fb274fff16244c63ccba1b0b1ecaa2ed77ec3f11643a27b9bfde33ec68"
     else
-      url "https://github.com/supernovae-st/nika/releases/download/v#{version}/nika-macos-x64-#{version}.tar.gz"
+      url "https://github.com/nika-open/nika/releases/download/v#{version}/nika-macos-x64-#{version}.tar.gz"
       sha256 "3df0a84b3b3d156ca6a9973f2f75baf54fa271b69b385699a7c4fc9fefcfef78"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/supernovae-st/nika/releases/download/v#{version}/nika-linux-arm64-#{version}.tar.gz"
+      url "https://github.com/nika-open/nika/releases/download/v#{version}/nika-linux-arm64-#{version}.tar.gz"
       sha256 "9756f9b614b549c5bb8f45f33cf7c3065cd6576de04fbfda779ceba88e219ffb"
     else
-      url "https://github.com/supernovae-st/nika/releases/download/v#{version}/nika-linux-x64-#{version}.tar.gz"
+      url "https://github.com/nika-open/nika/releases/download/v#{version}/nika-linux-x64-#{version}.tar.gz"
       sha256 "4ff918bf0b7ebe33f9661740546579b4cef7c330a2d3c60c689013eaa592437e"
     end
   end
@@ -48,8 +48,8 @@ class Nika < Formula
         nika compile hello my-first.nika               # write an offline workflow - then: nika check
 
       Agent plugin kit (skills - subagents - /nika:* commands - hooks - MCP, one bundle):
-        claude plugin marketplace add supernovae-st/nika-plugins && claude plugin install nika@nika
-        codex plugin marketplace add supernovae-st/nika-plugins && codex plugin add nika@nika
+        claude plugin marketplace add nika-open/nika-plugins && claude plugin install nika@nika
+        codex plugin marketplace add nika-open/nika-plugins && codex plugin add nika@nika
         nika doctor                                     # is the suite coherent? (binary - kits - keys)
 
       Learn: https://nika.sh - docs: https://docs.nika.sh
