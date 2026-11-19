@@ -46,18 +46,18 @@ jobs:
         run: |
           set -euo pipefail
           # Tap from the checkout so the PR's formula (not main's) installs.
-          brew tap supernovae-st/tap "file://$GITHUB_WORKSPACE"
-          brew install supernovae-st/tap/nika
+          brew tap nika-open/tap "file://$GITHUB_WORKSPACE"
+          brew install nika-open/tap/nika
 
       - name: brew audit (formula in the installed tap)
         # --except version: the binary-formula false positive — our urls
         # interpolate `#{version}`, so brew re-scans the resolved url and
         # calls the stanza redundant; the stanza is deliberately the ONE
         # line scripts/release/update-formula.sh rewrites per release.
-        run: brew audit --except version --formula supernovae-st/tap/nika
+        run: brew audit --except version --formula nika-open/tap/nika
 
       - name: brew test (the formula's own test block)
-        run: brew test supernovae-st/tap/nika
+        run: brew test nika-open/tap/nika
 
       - name: Smoke the installed binary
         run: |
