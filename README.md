@@ -15,21 +15,21 @@
 </p>
 
 <p align="center">
-  <a href="Formula/nika.rb"><img src="https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsupernovae-st%2Fhomebrew-tap%2Fmain%2FFormula%2Fnika.rb&amp;search=version%20%22(%5B0-9.%5D%2B)%22&amp;replace=%241&amp;label=formula" alt="Formula pin"></a>
-  <a href="https://github.com/supernovae-st/homebrew-tap/actions/workflows/test.yml"><img src="https://github.com/supernovae-st/homebrew-tap/actions/workflows/test.yml/badge.svg?branch=main" alt="Tap gate status"></a>
-  <a href="https://github.com/supernovae-st/nika/releases/latest"><img src="https://img.shields.io/github/v/release/supernovae-st/nika?label=engine" alt="Engine release"></a>
+  <a href="Formula/nika.rb"><img src="https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2Fnika-open%2Fhomebrew-tap%2Fmain%2FFormula%2Fnika.rb&amp;search=version%20%22(%5B0-9.%5D%2B)%22&amp;replace=%241&amp;label=formula" alt="Formula pin"></a>
+  <a href="https://github.com/nika-open/homebrew-tap/actions/workflows/test.yml"><img src="https://github.com/nika-open/homebrew-tap/actions/workflows/test.yml/badge.svg?branch=main" alt="Tap gate status"></a>
+  <a href="https://github.com/nika-open/nika/releases/latest"><img src="https://img.shields.io/github/v/release/nika-open/nika?label=engine" alt="Engine release"></a>
   <a href="https://docs.nika.sh"><img src="https://img.shields.io/badge/docs-docs.nika.sh-8b8cf8.svg" alt="Documentation"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT"></a>
   <br>
-  <a href="https://scorecard.dev/viewer/?uri=github.com/supernovae-st/homebrew-tap"><img src="https://api.scorecard.dev/projects/github.com/supernovae-st/homebrew-tap/badge" alt="OpenSSF Scorecard"></a>
-  <a href="https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/supernovae-st/homebrew-tap"><img src="https://archive.softwareheritage.org/badge/origin/https://github.com/supernovae-st/homebrew-tap/" alt="Archived by Software Heritage"></a>
+  <a href="https://scorecard.dev/viewer/?uri=github.com/nika-open/homebrew-tap"><img src="https://api.scorecard.dev/projects/github.com/nika-open/homebrew-tap/badge" alt="OpenSSF Scorecard"></a>
+  <a href="https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/nika-open/homebrew-tap"><img src="https://archive.softwareheritage.org/badge/origin/https://github.com/nika-open/homebrew-tap/" alt="Archived by Software Heritage"></a>
 </p>
 
 <p align="center"><strong>Watch Nika audit a workflow before it runs, then run it on a local model.</strong></p>
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/nika-hero.optimized.gif">
-    <img src="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/nika-hero.optimized.gif"
+  <a href="https://raw.githubusercontent.com/nika-open/nika/main/media/gifs/nika-hero.optimized.gif">
+    <img src="https://raw.githubusercontent.com/nika-open/nika/main/media/gifs/nika-hero.optimized.gif"
          alt="nika check audits a meeting-notes workflow before anything runs, then nika run executes it on a local model and writes the action items it found" width="960">
   </a>
 </p>
@@ -55,7 +55,7 @@ can verify. One Rust binary, local-first, open source (AGPL-3.0).
 > **This repository is Nika's Homebrew tap.** One command puts the engine's
 > released binary on your Mac or Linux machine, checked against its published
 > checksum, with shell completions. The engine itself is built and released
-> in [supernovae-st/nika](https://github.com/supernovae-st/nika); the tap
+> in [nika-open/nika](https://github.com/nika-open/nika); the tap
 > changes nothing in it.
 
 ## Your first minute
@@ -63,14 +63,14 @@ can verify. One Rust binary, local-first, open source (AGPL-3.0).
 1. **Install Nika**, then ask it which version you got.
 
    ```sh
-   brew install supernovae-st/tap/nika
+   brew install nika-open/tap/nika
    nika --version
    ```
 
    Recent Homebrew versions load a third-party tap's formulae only once you
    trust them. Installing by the full name, as above, records that trust for
    this formula. If an older install, or a command that names only `nika`, is
-   refused as untrusted, run `brew trust supernovae-st/tap` once.
+   refused as untrusted, run `brew trust nika-open/tap` once.
 
 2. **Write, check, run and verify a first workflow.** It runs on `mock/echo`,
    a rehearsal model built into Nika that echoes the prompt back. No account,
@@ -92,8 +92,8 @@ can verify. One Rust binary, local-first, open source (AGPL-3.0).
 **Watch the four commands of step 2 as they ran.**
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/full-loop.optimized.gif">
-    <img src="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/full-loop.optimized.gif"
+  <a href="https://raw.githubusercontent.com/nika-open/nika/main/media/gifs/full-loop.optimized.gif">
+    <img src="https://raw.githubusercontent.com/nika-open/nika/main/media/gifs/full-loop.optimized.gif"
          alt="The four commands as they ran: compile writes hello.nika, check passes every audit line, run is a mock/echo rehearsal, and trace verify reads back the chain the run printed" width="860">
   </a>
 </p>
@@ -207,8 +207,8 @@ the binary and rehearses any of them on the mock model, without writing to your
 folder. Watch the list it shows:
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/workflow-gallery.optimized.gif">
-    <img src="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/workflow-gallery.optimized.gif"
+  <a href="https://raw.githubusercontent.com/nika-open/nika/main/media/gifs/workflow-gallery.optimized.gif">
+    <img src="https://raw.githubusercontent.com/nika-open/nika/main/media/gifs/workflow-gallery.optimized.gif"
          alt="The ready-made workflows nika try lists: a numbered path of lessons and jobs such as meeting-actions and pr-review-fanout, each tagged with the verbs it uses" width="860">
   </a>
 </p>
@@ -220,8 +220,8 @@ its fix. `nika run` checks again and refuses a file that fails. Watch the check
 catch two defects in a pull-request review workflow:
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/static-check-fix.optimized.gif">
-    <img src="https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/static-check-fix.optimized.gif"
+  <a href="https://raw.githubusercontent.com/nika-open/nika/main/media/gifs/static-check-fix.optimized.gif">
+    <img src="https://raw.githubusercontent.com/nika-open/nika/main/media/gifs/static-check-fix.optimized.gif"
          alt="nika check catches two defects in a pull-request review workflow, then the real fix and the clean re-check that ends run ready" width="860">
   </a>
 </p>
@@ -229,8 +229,8 @@ catch two defects in a pull-request review workflow:
 <p align="center"><sub>Notice that each finding names its fix, down to a did-you-mean for a misspelled task. The fix is a real diff, and the re-check ends run ready. Captured from the real CLI; nothing runs.</sub></p>
 
 **See problems as you type.** The binary ships the language server,
-`nika lsp`, that the [editor extension](https://github.com/supernovae-st/nika-vscode)
-uses. ▶ [Watch the editor show the same problems, fixed in one keystroke](https://raw.githubusercontent.com/supernovae-st/nika/main/media/gifs/editor-diagnostics.optimized.gif):
+`nika lsp`, that the [editor extension](https://github.com/nika-open/nika-vscode)
+uses. ▶ [Watch the editor show the same problems, fixed in one keystroke](https://raw.githubusercontent.com/nika-open/nika/main/media/gifs/editor-diagnostics.optimized.gif):
 the diagnostics are the real language server's; the editor is an illustration.
 
 A few more first commands:
@@ -315,7 +315,7 @@ The formula only ever points at a real engine release tag whose archives and
 checksums are published. The engine's release workflow rewrites it and pushes
 the change here as a `nika <version>` commit. If that workflow cannot, the
 manual fallback is `scripts/release/update-formula.sh` in the
-[engine repository](https://github.com/supernovae-st/nika): it rewrites the
+[engine repository](https://github.com/nika-open/nika): it rewrites the
 `version` line and the four `sha256` lines from the release's `SHA256SUMS`.
 Never point the formula at a development version or at a tag that does not
 exist.
@@ -326,13 +326,13 @@ exist.
 
 | To | Run |
 |---|---|
-| Check the install | `brew test supernovae-st/tap/nika` |
+| Check the install | `brew test nika-open/tap/nika` |
 | Diagnose the machine | `nika doctor` |
-| Update | `brew update && brew upgrade supernovae-st/tap/nika` |
-| Remove | `brew uninstall supernovae-st/tap/nika && brew untap supernovae-st/tap` |
+| Update | `brew update && brew upgrade nika-open/tap/nika` |
+| Remove | `brew uninstall nika-open/tap/nika && brew untap nika-open/tap` |
 
 The full name works whether or not you have trusted the whole tap; `brew trust
-supernovae-st/tap` once lets the short `nika` work too.
+nika-open/tap` once lets the short `nika` work too.
 
 `brew test` runs the formula's test block against what you installed. It
 passes only if `nika --version` reports the pinned version, a small workflow
@@ -342,9 +342,9 @@ that can check but not run fails. `nika doctor` covers the rest of the
 machine (configuration, provider keys, local models) and prints the exact fix
 without changing anything.
 
-Not using Homebrew? The [engine README](https://github.com/supernovae-st/nika#readme)
+Not using Homebrew? The [engine README](https://github.com/nika-open/nika#readme)
 lists the other ways to install: the install script, the npm package
-`@supernovae-st/nika` ([nika-client](https://github.com/supernovae-st/nika-client))
+`@nika-open/nika` ([nika-client](https://github.com/nika-open/nika-client))
 and the release archives.
 
 ## Security
@@ -365,18 +365,18 @@ workflow.
 
 | | Repository | What it gives you |
 |---|---|---|
-| 🦋 | [nika](https://github.com/supernovae-st/nika) | The engine and CLI: write, check, run and verify AI workflows |
-| 📖 | [nika-docs](https://github.com/supernovae-st/nika-docs) | The documentation, live at [docs.nika.sh](https://docs.nika.sh) |
-| 📜 | [nika-spec](https://github.com/supernovae-st/nika-spec) | The language specification and the suite that proves an engine follows it |
-| 🧩 | [nika-vscode](https://github.com/supernovae-st/nika-vscode) | The editor extension, frozen at 0.120 and not qualified with 0.124: use `nika lsp` and the JSON Schema |
-| 🟦 | [nika-client](https://github.com/supernovae-st/nika-client) | Run and verify workflows from TypeScript |
-| ✅ | [nika-action](https://github.com/supernovae-st/nika-action) | A GitHub Action that posts a `nika check` verdict on your pull requests |
-| 🚀 | [nika-actions-starter](https://github.com/supernovae-st/nika-actions-starter) | A ready template: workflows, editor setup and CI from the first push |
-| 📦 | [nika-registry](https://github.com/supernovae-st/nika-registry) | Shareable workflows, pinned and re-verified |
-| 🤖 | [nika-plugins](https://github.com/supernovae-st/nika-plugins) | Teaches your coding agent (Claude Code, Codex, Cursor…) to write Nika |
-| 🍺 | **[homebrew-tap](https://github.com/supernovae-st/homebrew-tap)** | **`brew install supernovae-st/tap/nika`** |
-| 🐙 | [gh-nika](https://github.com/supernovae-st/gh-nika) | The Nika CLI as a GitHub CLI extension |
-| 🏛️ | [nika-estate](https://github.com/supernovae-st/nika-estate) | Where each file in Nika's core repositories comes from, declared and re-checkable |
+| 🦋 | [nika](https://github.com/nika-open/nika) | The engine and CLI: write, check, run and verify AI workflows |
+| 📖 | [nika-docs](https://github.com/nika-open/nika-docs) | The documentation, live at [docs.nika.sh](https://docs.nika.sh) |
+| 📜 | [nika-spec](https://github.com/nika-open/nika-spec) | The language specification and the suite that proves an engine follows it |
+| 🧩 | [nika-vscode](https://github.com/nika-open/nika-vscode) | The editor extension, frozen at 0.120 and not qualified with 0.124: use `nika lsp` and the JSON Schema |
+| 🟦 | [nika-client](https://github.com/nika-open/nika-client) | Run and verify workflows from TypeScript |
+| ✅ | [nika-action](https://github.com/nika-open/nika-action) | A GitHub Action that posts a `nika check` verdict on your pull requests |
+| 🚀 | [nika-actions-starter](https://github.com/nika-open/nika-actions-starter) | A ready template: workflows, editor setup and CI from the first push |
+| 📦 | [nika-registry](https://github.com/nika-open/nika-registry) | Shareable workflows, pinned and re-verified |
+| 🤖 | [nika-plugins](https://github.com/nika-open/nika-plugins) | Teaches your coding agent (Claude Code, Codex, Cursor…) to write Nika |
+| 🍺 | **[homebrew-tap](https://github.com/nika-open/homebrew-tap)** | **`brew install nika-open/tap/nika`** |
+| 🐙 | [gh-nika](https://github.com/nika-open/gh-nika) | The Nika CLI as a GitHub CLI extension |
+| 🏛️ | [nika-estate](https://github.com/nika-open/nika-estate) | Where each file in Nika's core repositories comes from, declared and re-checkable |
 <!-- /city:map -->
 
 ## License
@@ -386,5 +386,5 @@ The formula and the other files in this repository are under the
 AGPL-3.0-or-later, as the formula declares.
 
 <p align="center">
-  <sub>Docs: <a href="https://docs.nika.sh">docs.nika.sh</a> · Security: <a href="SECURITY.md">SECURITY.md</a> · Engine: <a href="https://github.com/supernovae-st/nika">nika</a> · Issues: <a href="https://github.com/supernovae-st/nika/issues">engine tracker</a></sub>
+  <sub>Docs: <a href="https://docs.nika.sh">docs.nika.sh</a> · Security: <a href="SECURITY.md">SECURITY.md</a> · Engine: <a href="https://github.com/nika-open/nika">nika</a> · Issues: <a href="https://github.com/nika-open/nika/issues">engine tracker</a></sub>
 </p>
